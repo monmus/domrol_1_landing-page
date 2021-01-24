@@ -1,7 +1,7 @@
 .header {
     height: 100vh;
     position: relative;
-    background-image: var(--darken-backcolor), url(../dist/img/fot3a.JPG);
+    background-image: var(--darken-backcolor), url(../img/fot3a.JPG);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -10,6 +10,7 @@
 -o-background-size:cover; 
 -moz-background-size:cover; 
 -webkit-background-size:cover;
+-moz-background-image: url(../img/fot3a.JPG);
 
     &__text-box {
         @include centerElement;
