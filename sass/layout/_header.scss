@@ -59,7 +59,7 @@
     &__list {
         list-style: none;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         animation: appearance 1s ease-out;
 
         @media (max-width: 700px) {
