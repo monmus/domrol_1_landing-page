@@ -210,14 +210,129 @@
         </div>
     </section>
 
-    <!-- <section class="section-organisers js--section-organisers">
+    <section class="section-organisers js--section-organisers">
         <div class="row">
             <div class="section-organisers__heading">
-                Наши организаторы
+                <h2 class="heading-secondary">Nasze projekty</h2>
             </div>
 
             <div class="section-organisers__box js--animated">
-                <div class="feature">
+
+                <div class="container">
+                    <div class="wrap">
+                        <div class="gallery">
+                            <figure class="gallery__item gallery__item--1">
+                                <a href="#img1">
+                                    <img src="img/fot3a.JPG" alt="01" class="gallery__img">
+                                </a>
+                                <div class="lightbox" id="img1">
+                                    <img src="img/fot3a.JPG" alt="">
+                                    <a href="#_" class="btn-close">&times;</a>
+                                </div>
+                            </figure>
+            
+                            <figure class="gallery__item gallery__item--2">
+                                <a href="#img2">
+                                    <img src="img/DSC_1313.JPG" alt="02" class="gallery__img">
+                                </a>
+                                <div class="lightbox" id="img2">
+                                    <img src="img/DSC_1313.JPG" alt="">
+                                    <a href="#_" class="btn-close">&times;</a>
+                                </div>
+                            </figure>
+            
+                            <figure class="gallery__item gallery__item--3">
+                                <a href="#img3">
+                                    <img src="img/DSC_02980001.JPG" alt="03" class="gallery__img">
+                                </a>
+                                <div class="lightbox" id="img3">
+                                    <img src="img/DSC_02980001.JPG" alt="">
+                                    <a href="#_" class="btn-close">&times;</a>
+                                </div>
+                            </figure>
+            
+                            <figure class="gallery__item gallery__item--4">
+                                <a href="#img4">
+                                    <img src="img/fot1a.JPG" alt="04" class="gallery__img">
+                                </a>
+                                <div class="lightbox" id="img4">
+                                    <img src="img/fot1a.JPG" alt="">
+                                    <a href="#_" class="btn-close">&times;</a>
+                                </div>
+                            </figure>
+            
+                            <figure class="gallery__item gallery__item--5">
+                                <a href="#img5">
+                                    <img src="img/HPIM44330014.JPG" alt="05" class="gallery__img">
+                                </a>
+                                <div class="lightbox" id="img5">
+                                    <img src="img/HPIM44330014.JPG" alt="">
+                                    <a href="#_" class="btn-close">&times;</a>
+                                </div>
+                            </figure>
+            
+                            <figure class="gallery__item gallery__item--6">
+                                <a href="#img6">
+                                    <img src="img/fot5.JPG" alt="06" class="gallery__img">
+                                </a>
+                                <div class="lightbox" id="img6">
+                                    <img src="img/fot5.JPG" alt="">
+                                    <a href="#" class="btn-close">&times;</a>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- <div class="image-wrapper">
+                    <div class="media">
+                      <div class="overlay"></div>
+                      <img src="img/fot3a.JPG" alt="">
+                      <div class="image-details">
+                        <p>Image 1</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div class="overlay"></div>
+                      <img src="img/DSC_1313.JPG" alt="">
+                      <div class="image-details">
+                        <p>Image 2</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div class="overlay"></div>
+                      <img src="img/DSC_02980001.JPG" alt="">
+                      <div class="image-details">
+                        <p>Image 3</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div class="overlay"></div>
+                      <img src="img/fot1a.JPG" alt="">
+                      <div class="image-details">
+                        <p>Image 4</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div class="overlay"></div>
+                      <img src="img/HPIM44330014.JPG" alt="">
+                      <div class="image-details">
+                        <p>Image 5</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div class="overlay"></div>
+                      <img src="img/fot5.JPG" alt="">
+                      <div class="image-details">
+                        <p>Image 6</p>
+                      </div>
+                    </div>
+                  </div> -->
+
+
+                <!-- <div class="feature">
                     <img src="dist/img/person-1.jpg" alt="First person" class="section-organisers__person-photo">
                     <h3 class="heading-tertiary no-margin-bottom">Александр Новиков</h3>
                     <div class="section-organisers__person-info">IQ менеджер</div>
@@ -240,12 +355,12 @@
                     <p class="paragraph">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent dapibus elementum suscipit. Fusce viverra viverra laoreet. Proin vitae maximus.
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
-    <section class="section-reserve js--section-reserve">
+    <!-- <section class="section-reserve js--section-reserve">
         <div class="row section-reserve__box">
             <div class="section-reserve__text-box">
                 <h2 class="section-reserve__heading">
@@ -336,6 +451,27 @@
                     </a>
                 </p>
             </div>
+
+
+            <div class="footer__contact">
+                <h3 class="footer__contact--heading">Formularz kontaktowy</h3>
+             
+                <br>
+                <div id="send_form_status"></div>
+                <form method="post" action="send_form.php" id="contact_form">
+                     <!-- <div><label for="name">Imię i nazwisko</label></div> -->
+                     <div><input type="text" name="name" id="name" class="formField" placeholder="Imię i nazwisko" /></div>
+                     <!-- <div><label for="phone">Numer telefonu</label></div> -->
+                     <div><input type="text" name="phone" id="phone" class="formField" placeholder="Numer telefonu" /></div>
+                     <!-- <div><label for="email">Adres email</label></div> -->
+                     <div><input type="text" name="email" id="email" class="formField" placeholder="Adres email" /></div>
+                     <!-- <div><label for="message">Treść wiadomości</label></div> -->
+                     <div><textarea name="message" id="message" class="formField" placeholder="Treść wiadomości"></textarea></div>
+                     <div><button id="sendBtn">Wyślij</button></div>
+                </form>
+            </div>
+            
+            
             <div class="footer__copyright">
                 Copyright &copy; by Monik@. 2021
             </div>
