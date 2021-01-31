@@ -43,6 +43,10 @@ $(document).ready(() => {
         $("html, body").animate({ scrollTop: $(".js--section-profit").offset().top }, 1000);
     });
 
+    $(".js--scroll-to-footer").click(function () {
+        $("html, body").animate({ scrollTop: $(".js--footer").offset().top }, 1000);
+    });
+
     $(".js--scroll-to-organisers").click(function () {
         $("html, body").animate({ scrollTop: $(".js--section-organisers").offset().top }, 1000);
     });

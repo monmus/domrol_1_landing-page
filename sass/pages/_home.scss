@@ -1,6 +1,6 @@
 .section-about {
     padding-top: 5rem;
-    padding-bottom: 8rem; 
+    padding-bottom: 15rem; 
     background-color: #fff;
  
     &__features {
@@ -70,6 +70,13 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
+
+    @media(max-width: 600px) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        // background-position: center;
+        // background-attachment: fixed;
+    }
  
 
     .section-overlay-mask1 {
@@ -87,7 +94,7 @@
       }
 
     @media(max-width: 800px) {
-        padding-top: 23rem;
+        padding-top: 15rem;
         margin-top: -18rem;
     }
 
@@ -136,7 +143,7 @@
     position: relative;
 
     @media(max-width: 600px) {
-        padding-bottom: 15rem;
+        padding-bottom: 5rem;
     }
 
 
@@ -170,7 +177,7 @@
     }
     
     .gallery {
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(16, 1fr);
         grid-template-rows: repeat(8, 5vw);
         grid-gap: 15px;
         width: 100%;
@@ -218,6 +225,45 @@
         grid-row-start: 6;
         grid-row-end: 9;
     }
+
+    .gallery__item--7 {
+        grid-column-start: 9;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .gallery__item--8 {
+        grid-column-start: 13;
+        grid-column-end: 17;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .gallery__item--9 {
+        grid-column-start: 9;
+        grid-column-end: 17;
+        grid-row-start: 3;
+        grid-row-end: 6;
+    }
+    
+    .gallery__item--10 {
+        grid-column-start: 9;
+        grid-column-end: 14;
+        grid-row-start: 6;
+        grid-row-end: 9;
+    }
+    
+    .gallery__item--11 {
+        grid-column-start: 14;
+        grid-column-end: 17;
+        grid-row-start: 6;
+        grid-row-end: 9;
+    }
+    
+  
+
+    
     
     .gallery__img {
         width: 100%;
@@ -279,13 +325,13 @@
     }
     
     .btn-close {
-        font-size: 32px;
+        font-size: 35px;
         display: block;
         margin: 0 auto;
         max-width: 200px;
         width: 100%;
         padding: 0 20px;
-        color: white;
+        color: rgb(202, 174, 11);
         font-weight: bold;
         text-decoration: none;
         height: auto;
