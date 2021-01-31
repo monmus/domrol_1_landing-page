@@ -131,7 +131,7 @@
 .section-organisers {
     background-color: #fff;
     padding: 5rem 0 10rem 0;
-    @include triangularSliceBottom;
+    // @include triangularSliceBottom;
     z-index: 1;
     position: relative;
 
@@ -174,7 +174,7 @@
         grid-template-rows: repeat(8, 5vw);
         grid-gap: 15px;
         width: 100%;
-        padding-top: 60px;
+        // padding-top: 60px;
     }
     
     .gallery__item--1 {
