@@ -67,16 +67,20 @@ background-color: var(--darken-backcolor-1);
 
     &__logo,
     &__logo--black {
-        margin-left: 5vw;
+        // margin-left: 5vw;
     }
     &__logo {
         width: 19rem;
         height: 4rem;
+        margin-top: 5px;
     }
 
     &__logo--black {
         width: 19rem;
         height: 4rem;
+        margin-top: 5px;
+        margin-left: 15px;
+        // margin-bottom: 5px;
     }
 
     &__logo--black {
@@ -176,7 +180,7 @@ background-color: var(--darken-backcolor-1);
             display: block;
             position: absolute;
             left: 0;
-            top: 10px;
+            top: 4px;
             width: 19rem;
             height: 4rem;
         }
