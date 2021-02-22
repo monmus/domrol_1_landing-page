@@ -124,7 +124,7 @@ $(document).ready(() => {
     });
 
 
-
+//pierwszy slajder
 
     $('.slider').slick({
         slidesToShow: 3,
@@ -165,9 +165,78 @@ $(document).ready(() => {
       });
 
 
+//drugi slajder
 
-    
+      $('.gallery-inner').on( "mousemove", function( event ) {
+  
+        var ePageX = event.pageX;
+        var ePageY = event.pageY;
+        var $captionBlock = $('.caption-block');
+      
+        
+        $(this).css({
+          'transform' : 'translateX(-'+(ePageX * 0.5)+'px)'
+        });
+        
+        
+        $captionBlock.css({
+          top: (ePageY + 30) + 'px',
+          left: (ePageX + 30) + 'px'
+        }); 
+       
+       
+        
+      });
+      
+      $('.gallery-inner .item').on('mouseenter', function() {
+        var $description = $(this).find('.description');
+        var $desc = $description.html();
+        var $captionBlock = $('.caption-block');
+        $captionBlock.html($desc).addClass('visible');
+      });
+      
+      $('.gallery-inner').on('mouseleave', function() {
+        var $captionBlock = $('.caption-block');
+        $captionBlock.html('').removeClass('visible');
+      });
+      
+      $('.gallery-inner .item').on('click', function(event) {
+        event.stopPropagation();
+        
+        var ePageX = event.pageX;
+        var ePageY = event.pageY;
+        var $this = $(this);
+        var $img = $this.find('img').clone();
+        var $viewer = $('.viewer');
+        var $imgContainer = $('.viewer').find('.img-container');
+      
+        $imgContainer.html($img);
+       
+        
+        $viewer.fadeIn(500, function() {
+          
+        });
+        
+      });
+      
+      $('.viewer').on('click', function(event) {
+        event.stopPropagation();
+      });
+      
+      $('body').on('click', function(e) {
+          $('.viewer').fadeOut(500);
+      
+      });
+      
+      $('.close-viewer').on('click', function() {
+        $('.viewer').fadeOut(500);
+      });
+      
+      $('.gallery-inner .item').on('transitionend', function() {
+         
+      });
 
+//trzeci
 
 
 });
