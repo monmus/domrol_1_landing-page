@@ -135,7 +135,7 @@ $(document).ready(() => {
         variableWidth: true,
         infinite: true,
         focusOnSelect: true,
-        cssEase: 'linear',
+        // cssEase: 'linear',
         touchMove: true,
         prevArrow:'<button class="slick-prev"> < </button>',
         nextArrow:'<button class="slick-next"> > </button>',
