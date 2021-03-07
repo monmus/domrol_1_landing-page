@@ -123,22 +123,132 @@ $(document).ready(() => {
         offset: "25%"
     });
 
+    //slideshow style interval
+var autoSwap = setInterval( swap,3500);
+
+//pause slideshow and reinstantiate on mouseout
+$('ul, span').hover(
+  function () {
+    clearInterval(autoSwap);
+}, 
+  function () {
+   autoSwap = setInterval( swap,3500);
+});
+
+//global variables
+var items = [];
+var startItem = 1;
+var position = 0;
+var itemCount = $('.carousel li.items').length;
+var leftpos = itemCount;
+var resetCount = itemCount;
+
+//unused: gather text inside items class
+$('li.items').each(function(index) {
+    items[index] = $(this).text();
+});
+
+//swap images function
+function swap(action) {
+  var direction = action;
+  
+  //moving carousel backwards
+  if(direction == 'counter-clockwise') {
+    var leftitem = $('.left-pos').attr('id') - 1;
+    if(leftitem == 0) {
+      leftitem = itemCount;
+    }
+    
+    $('.right-pos').removeClass('right-pos').addClass('back-pos');
+    $('.main-pos').removeClass('main-pos').addClass('right-pos');
+    $('.left-pos').removeClass('left-pos').addClass('main-pos');
+    $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
+    
+    startItem--;
+    if(startItem < 1) {
+      startItem = itemCount;
+    }
+  }
+  
+  //moving carousel forward
+  if(direction == 'clockwise' || direction == '' || direction == null ) {
+    function pos(positionvalue) {
+      if(positionvalue != 'leftposition') {
+        //increment image list id
+        position++;
+        
+        //if final result is greater than image count, reset position.
+        if((startItem+position) > resetCount) {
+          position = 1-startItem;
+        }
+      }
+    
+      //setting the left positioned item
+      if(positionvalue == 'leftposition') {
+        //left positioned image should always be one left than main positioned image.
+        position = startItem - 1;
+      
+        //reset last image in list to left position if first image is in main position
+        if(position < 1) {
+          position = itemCount;
+        }
+      }
+   
+      return position;
+    }  
+  
+   $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
+   $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
+   $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
+   $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
+
+    startItem++;
+    position=0;
+    if(startItem > itemCount) {
+      startItem = 1;
+    }
+  }
+}
+
+//next button click function
+$('#next').click(function() {
+  swap('clockwise');
+});
+
+//prev button click function
+$('#prev').click(function() {
+  swap('counter-clockwise');
+});
+
+//if any visible items are clicked
+$('li').click(function() {
+  if($(this).attr('class') == 'items left-pos') {
+     swap('counter-clockwise'); 
+  }
+  else {
+    swap('clockwise'); 
+  }
+});
+
 
 //pierwszy slajder
 
-    $('.slider').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: false,
-        centerMode: true,
-        variableWidth: true,
-        infinite: true,
-        focusOnSelect: true,
-        // cssEase: 'linear',
-        touchMove: true,
-        prevArrow:'<button class="slick-prev"> < </button>',
-        nextArrow:'<button class="slick-next"> > </button>',
+
+
+
+    // $('.slider').slick({
+    //     slidesToShow: 3,
+    //     slidesToScroll: 1,
+    //     arrows: true,
+    //     dots: false,
+    //     centerMode: true,
+    //     variableWidth: true,
+    //     infinite: true,
+    //     focusOnSelect: true,
+    //     // cssEase: 'linear',
+    //     touchMove: true,
+    //     prevArrow:'<button class="slick-prev"> < </button>',
+    //     nextArrow:'<button class="slick-next"> > </button>',
         
         //         responsive: [                        
         //             {
@@ -149,97 +259,122 @@ $(document).ready(() => {
         //               }
         //             },
         //         ]
-      });
+    //   });
       
       
-      var imgs = $('.slider img');
-      imgs.each(function(){
-        var item = $(this).closest('.item');
-        item.css({
-          'background-image': 'url(' + $(this).attr('src') + ')', 
-          'background-position': 'center',            
-          '-webkit-background-size': 'cover',
-          'background-size': 'cover', 
-        });
-        $(this).hide();
-      });
+    //   var imgs = $('.slider img');
+    //   imgs.each(function(){
+    //     var item = $(this).closest('.item');
+    //     item.css({
+    //       'background-image': 'url(' + $(this).attr('src') + ')', 
+    //       'background-position': 'center',            
+    //       '-webkit-background-size': 'cover',
+    //       'background-size': 'cover', 
+    //     });
+    //     $(this).hide();
+    //   });
 
 
 //drugi slajder
 
-      $('.gallery-inner').on( "mousemove", function( event ) {
+    //   $('.gallery-inner').on( "mousemove", function( event ) {
   
-        var ePageX = event.pageX;
-        var ePageY = event.pageY;
-        var $captionBlock = $('.caption-block');
+    //     var ePageX = event.pageX;
+    //     var ePageY = event.pageY;
+    //     var $captionBlock = $('.caption-block');
       
         
-        $(this).css({
-          'transform' : 'translateX(-'+(ePageX * 0.5)+'px)'
-        });
+    //     $(this).css({
+    //       'transform' : 'translateX(-'+(ePageX * 0.5)+'px)'
+    //     });
         
         
-        $captionBlock.css({
-          top: (ePageY + 30) + 'px',
-          left: (ePageX + 30) + 'px'
-        }); 
+    //     $captionBlock.css({
+    //       top: (ePageY + 30) + 'px',
+    //       left: (ePageX + 30) + 'px'
+    //     }); 
        
        
         
-      });
+    //   });
       
-      $('.gallery-inner .item').on('mouseenter', function() {
-        var $description = $(this).find('.description');
-        var $desc = $description.html();
-        var $captionBlock = $('.caption-block');
-        $captionBlock.html($desc).addClass('visible');
-      });
+    //   $('.gallery-inner .item').on('mouseenter', function() {
+    //     var $description = $(this).find('.description');
+    //     var $desc = $description.html();
+    //     var $captionBlock = $('.caption-block');
+    //     $captionBlock.html($desc).addClass('visible');
+    //   });
       
-      $('.gallery-inner').on('mouseleave', function() {
-        var $captionBlock = $('.caption-block');
-        $captionBlock.html('').removeClass('visible');
-      });
+    //   $('.gallery-inner').on('mouseleave', function() {
+    //     var $captionBlock = $('.caption-block');
+    //     $captionBlock.html('').removeClass('visible');
+    //   });
       
-      $('.gallery-inner .item').on('click', function(event) {
-        event.stopPropagation();
+    //   $('.gallery-inner .item').on('click', function(event) {
+    //     event.stopPropagation();
         
-        var ePageX = event.pageX;
-        var ePageY = event.pageY;
-        var $this = $(this);
-        var $img = $this.find('img').clone();
-        var $viewer = $('.viewer');
-        var $imgContainer = $('.viewer').find('.img-container');
+    //     var ePageX = event.pageX;
+    //     var ePageY = event.pageY;
+    //     var $this = $(this);
+    //     var $img = $this.find('img').clone();
+    //     var $viewer = $('.viewer');
+    //     var $imgContainer = $('.viewer').find('.img-container');
       
-        $imgContainer.html($img);
+    //     $imgContainer.html($img);
        
         
-        $viewer.fadeIn(500, function() {
+    //     $viewer.fadeIn(500, function() {
           
-        });
+    //     });
         
-      });
+    //   });
       
-      $('.viewer').on('click', function(event) {
-        event.stopPropagation();
-      });
+    //   $('.viewer').on('click', function(event) {
+    //     event.stopPropagation();
+    //   });
       
-      $('body').on('click', function(e) {
-          $('.viewer').fadeOut(500);
+    //   $('body').on('click', function(e) {
+    //       $('.viewer').fadeOut(500);
       
-      });
+    //   });
       
-      $('.close-viewer').on('click', function() {
-        $('.viewer').fadeOut(500);
-      });
+    //   $('.close-viewer').on('click', function() {
+    //     $('.viewer').fadeOut(500);
+    //   });
       
-      $('.gallery-inner .item').on('transitionend', function() {
+    //   $('.gallery-inner .item').on('transitionend', function() {
          
-      });
+    //   });
 
 //trzeci
 
+var $item = 0,
+$itemNo = $(".hero figure").length;
+function transitionSlide() {
+$item++;
+if ($item > $itemNo - 1) {
+  $item = 0;
+}
+$(".hero figure").removeClass("on");
+$(".hero figure")
+  .eq($item)
+  .addClass("on");
+}
+var $autoTransition = setInterval(transitionSlide, 3500);
+
+$(".hero figure").click(function() {
+clearInterval($autoTransition);
+$item = $(this).index();
+$(".hero figure").removeClass("on");
+$(".hero figure")
+  .eq($item)
+  .addClass("on");
+$autoTransition = setInterval(transitionSlide, 5500);
+});
 
 });
+
+
 
 
 
