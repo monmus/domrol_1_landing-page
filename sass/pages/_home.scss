@@ -175,6 +175,11 @@
         height: 100%;
     }
 
+
+
+
+
+    
  
     &__heading {
         font-size: 4rem;
@@ -187,6 +192,174 @@
     &__box {
         display: flex;
         margin: 10px;
+        flex-direction: column;
+
+        //first
+
+        .container {
+          max-width: 760px;
+          margin: auto;
+          // border: #fff solid 3px;
+          // background: #fff;
+        }
+
+
+        *, *:before, *:after {
+          box-sizing: border-box;
+          position: relative;
+          transition-property: clip-path, opacity;
+          transition-duration: 900ms, 300ms;
+          transition-timing-function: cubic-bezier(.5, 0, .5, 1);
+        }
+
+
+        .slider {
+          position:relative;
+          display: flex;
+          // width: 100vw;
+          height: 70vh;
+          overflow: hidden;
+          .status {
+            position: absolute;
+            bottom: 10px;
+            left:10px;
+            display:flex;
+            .stat {
+              width:10px;
+              height:10px;
+              background-color:transparent;
+              border-radius:50%;
+              z-index:11;
+              margin: 0px 5px;
+              border: 2px solid #fff;
+            }
+            .stat[data-active] {
+              background-color:#fff;
+            }
+          }
+          
+          img {
+            object-fit: cover;
+            object-position: center 80%;
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+          .image {
+            width: 100%;
+            margin-right: -100%;
+            opacity: 0;
+            display: block;
+            img {
+              clip-path: circle(50px at 5vw 50%);
+             }
+          }
+          .image[data-active] {
+            opacity:1;
+            img {
+              clip-path: circle(100vmax at 50% 50%);
+            }
+          }
+          .image[data-active] ~.image {
+            opacity: 0;
+            img{
+              clip-path: circle(50px at 95vw 50%);
+            }
+          }
+          svg {
+           height: 30px;
+            position:absolute;
+            top:50%;
+            margin-top:-15px;
+            z-index: 1000;
+            cursor: pointer;
+            overflow:visible;
+            path {
+              stroke: #666;
+              stroke-linecap:round;
+              stroke-width:12px;
+              fill:transparent;
+            }
+            circle {
+              fill: #fff9;
+            }
+            &#next {
+              right:5vw;
+        
+            }
+            &#prev {
+              left:5vw;
+            }
+          }
+        }
+        .dwf {
+          position:fixed;
+          bottom:4px;
+          right:10px;
+          background-color:#0003;
+          padding:3px;
+          border-radius:3px;
+        }
+
+
+//second
+        
+.container {
+  max-width: 760px;
+  margin: auto;
+  border: #fff solid 3px;
+  background: #fff;
+}
+
+.main-img img,
+.imgs img {
+  width: 100%;
+  height: 410px;
+}
+
+.imgs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+.imgs img {
+  cursor: pointer;
+ height: 130px;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--fade-time) ease-in 1 forwards;
+}
+
+/* Media Queries */
+@media(max-width: 600px) {
+  .imgs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+//third
+
+
+        
         
         @-webkit-keyframes infoIn {
           0% {
@@ -386,8 +559,158 @@
           }
         }
         
+//fourth
+.hero1 {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  margin: auto;
+  width: 70vw;
+}
+.slider1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  margin: 20px;
+}
+.slider1 .image{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: anime 15s 0s infinite; 
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.slider1 .image:nth-of-type(1){
+  background-image: url('/img/fot1a.JPG');
+}
+.slider1 .image:nth-of-type(2){
+  animation-delay: 5s;
+  background-image: url('/img/fot3a.JPG');
+}
+.slider1 .image:nth-of-type(3){
+  animation-delay: 10s;
+  background-image: url('/img/fot5.JPG');
+}
+@keyframes anime {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+//fifth
 
 
+
+.slider2 {
+  height: 460px;
+  // height: auto !important;
+  overflow: hidden;
+	position: sticky;
+  width: 80vw;
+  margin: auto;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider2>img{
+	position: absolute;
+	left: 0;
+  top: 0;
+  z-index: -1;
+	transition: all 0.5s;
+  width: 100%;
+  height: 100vh;
+  // object-fit: cover;
+  object-position: center;
+  background-size: cover;
+
+  @media(max-width: 400px) {
+    position: absolute;
+	left: -92px;
+  top: 0;
+  z-index: -1;
+	transition: all 0.5s;
+  width: 152vw;
+  height: 85vh;
+  // object-fit: cover;
+  object-position: center;
+  background-size: cover;
+}
+
+
+}
+
+.slider2 input[name='slide_switch'] {
+	display: none;
+}
+
+.slider2 label {
+	/*Lets add some spacing for the thumbnails*/
+	margin: 0 9px 18px 9px;
+	border: 3px solid #999;
+	
+	float: left;
+  min-height: 5rem;
+  max-height: 5rem;
+  height: auto !important;
+  overflow: hidden;
+	cursor: pointer;
+	transition: all 0.5s;
+	
+	/*Default style = low opacity*/
+	// opacity: 0.6;
+}
+
+.slider2 label img{
+  width: 8rem;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+	display: block;
+  background-size:cover;
+}
+
+/*Time to add the click effects*/
+.slider2 input[name='slide_switch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider2 input[name='slide_switch'] ~ img {
+	opacity: 0;
+	transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider2 input[name='slide_switch']:checked+label+img {
+	opacity: 1;
+	transform: scale(1);
+}
         
 
         @media(max-width: 800px) {
