@@ -591,16 +591,18 @@
   background-size: cover;
 }
 
-.slider1 .image:nth-of-type(1){
-  background-image: url('/img/fot1a.JPG');
+.slider1 .image:nth-of-type(1) img{
+  background-size: cover;
+  animation-delay: 7s;
+  // background-image: url('/img/fot1a.JPG');
 }
 .slider1 .image:nth-of-type(2){
-  animation-delay: 5s;
-  background-image: url('/img/fot3a.JPG');
+  animation-delay: 14s;
+  // background-image: url('/img/fot3a.JPG');
 }
 .slider1 .image:nth-of-type(3){
-  animation-delay: 10s;
-  background-image: url('/img/fot5.JPG');
+  animation-delay: 20s;
+  // background-image: url('/img/fot5.JPG');
 }
 @keyframes anime {
   0% {
