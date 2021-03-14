@@ -34,6 +34,7 @@
             <ul class="navigation__list">
                 <li class="navigation__item"><a href="#" class="navigation__link js--scroll-to-about">o nas</a></li>
                 <li class="navigation__item"><a href="#" class="navigation__link js--scroll-to-profit">oferta</a></li>
+                <li class="navigation__item"><a href="#footer" class="navigation__link js--scroll-to-footer">poradnik</a></li>
                 <li class="navigation__item"><a href="#footer" class="navigation__link js--scroll-to-footer">kontakt</a></li>
                 <li class="navigation__item navigation__list--close" id="close-menu">&times;</li>
             </ul>
@@ -84,13 +85,6 @@
                         Współpracujemy z producentem osłon okiennych Vertex S.A, Rolmax oraz producentem urządzeń sterujących do osłon okiennych Inel Sp z o.o.
                     </p>
                 </div>
-                <!-- <div class="feature">
-                    <ion-icon name="trending-up" class="icon icon-big icon-big--blue"></ion-icon>
-                    <h3 class="heading-tertiary">Możesz nam zaufać</h3>
-                    <p class="paragraph feature__text">
-                        W naszej pracy zawsze zwracamy uwagę na jakość, staranność, jak i na punktualność oraz rzetelność.
-                    </p>
-                </div> -->
             </div>
 
             <!-- <div class="u-center-text">
@@ -228,191 +222,138 @@
 
             <div class="section-organisers__box js--animated">
 
-<!-- first -->
 
-
-                <div class="slider2">
-
-                    <!-- Image 1 -->
-                    <input type="radio" name="slide_switch" id="id1" />
-                    <label for="id1">
-                        <img src="img/fot1a.JPG" alt="">
-                      </label>
-                      <img src="img/fot1a.JPG" alt="">
-                  
-                    <!-- Image 2 -->
-                    <input type="radio" name="slide_switch" id="id2" checked="checked" />
-                    <label for="id2">
-                        <img src="img/fot3a.JPG" alt="">
-                      </label>
-                      <img src="img/fot3a.JPG" alt="">
-                  
-                    <!-- Image 3 -->
-                    <input type="radio" name="slide_switch" id="id3" />
-                    <label for="id3">
-                        <img src="img/fot5.JPG" alt="">
-                    </label>
-                    <img src="img/fot5.JPG" alt="">
-                  
-                    <!-- Image 4 -->
-                    <input type="radio" name="slide_switch" id="id4" />
-                    <label for="id4">
-                        <img src="img/DSC_1313.JPG" alt="">
-                      </label>
-                      <img src="img/DSC_1313.JPG" alt="">
-                  
-                    <!-- Image 5 -->
-                    <input type="radio" name="slide_switch" id="id5" />
-                    <label for="id5">
-                        <img src="img/fot5.JPG" alt="">
-                      </label>
-                      <img src="img/fot5.JPG" alt="">
-                  </div>
-
-
-
-<!-- second -->
-
-             
-                <div class="hero1">
-                    <div class="slider1">
-                        <div class="image">
-                            <img src="img/fot5.JPG" alt="">
-                        </div>
-                        <div class="image">
-                            <img src="img/fot3a.JPG" alt="">
-                        </div>
-                        <div class="image">
-                            <img src="img/fot1a.JPG" alt="">
-                        </div>
-                    </div>
+<div class="container">
+    <div class="wrap">
+        <div class="gallery">
+            <figure class="gallery__item gallery__item--1">
+                <a href="#img1">
+                    <img src="img/fot1a.JPG" alt="01" class="gallery__img">
+                </a>
+                <div class="lightbox" id="img1">
+                    <img src="img/fot1a.JPG" alt="01">
+                    <a href="#_" class="btn-close">&times;</a>
                 </div>
-            
-<!-- third -->
+            </figure>
 
-                <div class="container">
-
-                <div class="slider" data-state="0">  
-   
-                    <svg id="prev" viewBox='0 0 100 100'>
-                      <circle cx="50" cy="50" r="85" />
-                      <path d="M 65,2 17,50 65,98" />
-                    </svg>
-                    <svg id="next" viewBox='0 0 100 100'>
-                      <circle cx="50" cy="50" r="85" />
-                      <path d="M 35,2 82,50 35,98" />
-                    </svg>
-                  
-                  <div class="status">
-                    <div class="stat" data-key="0"></div>
-                    <div class="stat" data-key="1"></div>
-                    <div class="stat" data-key="2"></div>
-                    <div class="stat" data-key="3"></div>
-                    <div class="stat" data-key="4"></div>
-                    <div class="stat" data-key="5"></div>
-                  </div>
-                  <div class="image" data-key="0" >
-                    <img src="img/fot1a.JPG" alt="">
-                  </div>
-                  <div class="image" data-key="1">
-                    <img src="img/fot3a.JPG" alt="">
-                  </div>
-                  <div class="image" data-key="2">
-                    <img src="img/fot5.JPG" alt="">
-                  </div>
-                  <div class="image" data-key="3">
-                    <img src="img/DSC_1313.JPG" alt="">
-                  </div>
-                  <div class="image" data-key="4" data-active>
-                    <img src="img/fot1a.JPG" alt="">
-                  </div>
-                  <div class="image" data-key="5">
-                    <img src="img/fot5.JPG" alt="">
-                  </div>
+            <figure class="gallery__item gallery__item--2">
+                <a href="#img2">
+                    <img src="img/fot3a.JPG" alt="02" class="gallery__img">
+                </a>
+                <div class="lightbox" id="img2">
+                    <img src="img/fot3a.JPG" alt="02">
+                    <a href="#_" class="btn-close">&times;</a>
                 </div>
-            </div>
+            </figure>
 
-<!-- fourth -->
+            <figure class="gallery__item gallery__item--3">
+                <a href="#img3">
+                    <img src="img/fot5.JPG" alt="03" class="gallery__img">
+                </a>
+                <div class="lightbox" id="img3">
+                    <img src="img/fot5.JPG" alt="03">
+                    <a href="#_" class="btn-close">&times;</a>
+                </div>
+            </figure>
 
+            <figure class="gallery__item gallery__item--4">
+                <a href="#img4">
+                    <img src="img/DSC_1313.JPG" alt="04" class="gallery__img">
+                </a>
+                <div class="lightbox" id="img4">
+                    <img src="img/DSC_1313.JPG" alt="04">
+                    <a href="#_" class="btn-close">&times;</a>
+                </div>
+            </figure>
 
-                <div class="container">
-                    <div class="main-img">
-                      <img src="img/fot1a.JPG" id="current">
-                    </div>
-                  
-                    <div class="imgs">
-                        <img src="img/fot1a.JPG" alt="">
-                        <img src="img/fot3a.JPG" alt="">
-                        <img src="img/fot5.JPG" alt="">
-                        <img src="img/DSC_1313.JPG" alt="">
-                        <img src="img/DSC_1313.JPG" alt="">
-                        <img src="img/fot5.JPG" alt="">
-                        <img src="img/fot3a.JPG" alt="">
-                        <img src="img/fot1a.JPG" alt="">
-                    </div>
-                  </div>
+            <figure class="gallery__item gallery__item--5">
+                <a href="#img5">
+                    <img src="img/DSC_40780003.JPG" alt="05" class="gallery__img">
+                </a>
+                <div class="lightbox" id="img5">
+                    <img src="img/DSC_40780003.JPG" alt="05">
+                    <a href="#_" class="btn-close">&times;</a>
+                </div>
+            </figure>
 
-<!-- fivth -->
-
-                <div id="hero">
-                    <div class="hero">
-                      <figure class="on">
-                        <img src="img/fot1a.JPG" alt="">
-                        <div>
-                          <h2>Heading 1</h2>
-                          <p>Hella wayfarers messenger bag normcore readymade slow-carb quinoa tumeric fixie ramps.</p>
-                    
-                        </div>
-                      </figure>
-                      <figure> 
-                        <img src="img/fot3a.JPG" alt="">
-                        <div>
-                          <h2>Heading 2</h2>
-                          <p>Hella wayfarers messenger bag normcore readymade slow-carb quinoa tumeric fixie ramps.</p>
-                     
-                        </div>
-                      </figure>
-                     
-                     <figure> 
-                        <img src="img/DSC_1313.JPG" alt="">
-                        <div>
-                          <h2>Heading 4</h2>
-                          <p>Hella wayfarers messenger bag normcore readymade slow-carb quinoa tumeric fixie ramps.</p>
-                         
-                        </div>
-                      </figure>
-                      <figure> 
-                          <img src="img/fot5.JPG" alt="">
-                        <div>
-                          <h2>Heading 4</h2>
-                          <p>Hella wayfarers messenger bag normcore readymade slow-carb quinoa tumeric fixie ramps.</p>
-                      
-                        </div>
-                      </figure>
-                      <figure> 
-                        <img src="img/DSC_1313.JPG" alt="">
-                        <div>
-                          <h2>Heading 4</h2>
-                          <p>Hella wayfarers messenger bag normcore readymade slow-carb quinoa tumeric fixie ramps.</p>
-                      
-                        </div>
-                      </figure>
-                   
-                    </div>
-                  </div>
-
-
-
-
-
-
-
+            <figure class="gallery__item gallery__item--6">
+                <a href="#img6">
+                    <img src="img/DSC_02980001.JPG" alt="06" class="gallery__img">
+                </a>
+                <div class="lightbox" id="img6">
+                                     <img src="img/DSC_02980001.JPG" alt="06">
+                    <a href="#" class="btn-close">&times;</a>
+                </div>
+            </figure>
+        </div>
+    </div>
+</div>
 
 
                   
             </div>
         </div>
     </section>
+
+
+    <section class="section-clients js--section-clients">
+        <div class="row">
+            <h2 class="heading-secondary u-center-text margin-bottom-big">KILKA WSKAZÓWEK JAK DBAĆ O NASZE PRODUKTY</h2>
+
+            <div class="section-clients__features js--animated">
+                <div class="feature">
+                    <ion-icon name="happy" class="icon icon-big"></ion-icon>
+                    <h3 class="heading-tertiary">CZYSZCZENIE</h3>
+                    <p class="paragraph feature__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
+                    </p>
+                </div>
+                <div class="feature">
+                    <ion-icon name="contacts" class="icon icon-big"></ion-icon>
+                    <h3 class="heading-tertiary">KONSERWACJA</h3>
+                    <p class="paragraph feature__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
+                    </p>
+                </div>
+                <!-- <div class="feature">
+                    <ion-icon name="paper" class="icon icon-big"></ion-icon>
+                    <h3 class="heading-tertiary">Опытные предприниматели</h3>
+                    <p class="paragraph feature__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </section> 
+
+
+
+
+    <section class="section-organisers1 js--section-organisers"> 
+        <div class="wrapper">
+            <div class="testimonial">
+              <ul class="testimonial-ul">
+                <li class="testimonial-slide active">
+                  <p class="slidePara"> Jestem bardzo zadowolona z rolet, które zamówiłam. Montaż przebiegł sprawnie i szybko.
+                  </p>
+                </li>
+                <li class="testimonial-slide">
+                  <p class="slidePara"> Jestem bardzo zadowolona ze współpracy. Żaluzje są piękne, bardzo dobrej jakości.
+                  </p>
+                </li> 
+                <li class="testimonial-slide">
+                  <p class="slidePara"> Serdecznie polecam!! Miła i profesjonalna obsługa. Szybki czas realizacji.
+                  </p>
+                </li>
+                <span class="top-left"></span>
+                <span class="top-right"></span>
+              </ul>        
+            </div>
+        </div>
+
+    </section> 
+
+    
 
     <footer class="footer js--footer" id="footer">
         <div class="row">

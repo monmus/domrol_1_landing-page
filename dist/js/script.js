@@ -115,7 +115,7 @@ $(document).ready(() => {
                     quotations[i].style.animation = "moveFromLeftScreen 1s ease-out 1.25s backwards";
                     quotations[i].classList.add(visible);
                 });
-            }, 5000);
+            }, 3000);
 
 
         }
@@ -123,112 +123,112 @@ $(document).ready(() => {
         offset: "25%"
     });
 
-    //slideshow style interval
-var autoSwap = setInterval( swap,3500);
+//     //slideshow style interval
+// var autoSwap = setInterval( swap,3500);
 
-//pause slideshow and reinstantiate on mouseout
-$('ul, span').hover(
-  function () {
-    clearInterval(autoSwap);
-}, 
-  function () {
-   autoSwap = setInterval( swap,3500);
-});
+// //pause slideshow and reinstantiate on mouseout
+// $('ul, span').hover(
+//   function () {
+//     clearInterval(autoSwap);
+// }, 
+//   function () {
+//    autoSwap = setInterval( swap,3500);
+// });
 
-//global variables
-var items = [];
-var startItem = 1;
-var position = 0;
-var itemCount = $('.carousel li.items').length;
-var leftpos = itemCount;
-var resetCount = itemCount;
+// //global variables
+// var items = [];
+// var startItem = 1;
+// var position = 0;
+// var itemCount = $('.carousel li.items').length;
+// var leftpos = itemCount;
+// var resetCount = itemCount;
 
-//unused: gather text inside items class
-$('li.items').each(function(index) {
-    items[index] = $(this).text();
-});
+// //unused: gather text inside items class
+// $('li.items').each(function(index) {
+//     items[index] = $(this).text();
+// });
 
-//swap images function
-function swap(action) {
-  var direction = action;
+// //swap images function
+// function swap(action) {
+//   var direction = action;
   
-  //moving carousel backwards
-  if(direction == 'counter-clockwise') {
-    var leftitem = $('.left-pos').attr('id') - 1;
-    if(leftitem == 0) {
-      leftitem = itemCount;
-    }
+//   //moving carousel backwards
+//   if(direction == 'counter-clockwise') {
+//     var leftitem = $('.left-pos').attr('id') - 1;
+//     if(leftitem == 0) {
+//       leftitem = itemCount;
+//     }
     
-    $('.right-pos').removeClass('right-pos').addClass('back-pos');
-    $('.main-pos').removeClass('main-pos').addClass('right-pos');
-    $('.left-pos').removeClass('left-pos').addClass('main-pos');
-    $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
+//     $('.right-pos').removeClass('right-pos').addClass('back-pos');
+//     $('.main-pos').removeClass('main-pos').addClass('right-pos');
+//     $('.left-pos').removeClass('left-pos').addClass('main-pos');
+//     $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
     
-    startItem--;
-    if(startItem < 1) {
-      startItem = itemCount;
-    }
-  }
+//     startItem--;
+//     if(startItem < 1) {
+//       startItem = itemCount;
+//     }
+//   }
   
-  //moving carousel forward
-  if(direction == 'clockwise' || direction == '' || direction == null ) {
-    function pos(positionvalue) {
-      if(positionvalue != 'leftposition') {
-        //increment image list id
-        position++;
+//   //moving carousel forward
+//   if(direction == 'clockwise' || direction == '' || direction == null ) {
+//     function pos(positionvalue) {
+//       if(positionvalue != 'leftposition') {
+//         //increment image list id
+//         position++;
         
-        //if final result is greater than image count, reset position.
-        if((startItem+position) > resetCount) {
-          position = 1-startItem;
-        }
-      }
+//         //if final result is greater than image count, reset position.
+//         if((startItem+position) > resetCount) {
+//           position = 1-startItem;
+//         }
+//       }
     
-      //setting the left positioned item
-      if(positionvalue == 'leftposition') {
-        //left positioned image should always be one left than main positioned image.
-        position = startItem - 1;
+//       //setting the left positioned item
+//       if(positionvalue == 'leftposition') {
+//         //left positioned image should always be one left than main positioned image.
+//         position = startItem - 1;
       
-        //reset last image in list to left position if first image is in main position
-        if(position < 1) {
-          position = itemCount;
-        }
-      }
+//         //reset last image in list to left position if first image is in main position
+//         if(position < 1) {
+//           position = itemCount;
+//         }
+//       }
    
-      return position;
-    }  
+//       return position;
+//     }  
   
-   $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
-   $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
-   $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
-   $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
+//    $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
+//    $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
+//    $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
+//    $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
 
-    startItem++;
-    position=0;
-    if(startItem > itemCount) {
-      startItem = 1;
-    }
-  }
-}
+//     startItem++;
+//     position=0;
+//     if(startItem > itemCount) {
+//       startItem = 1;
+//     }
+//   }
+// }
 
-//next button click function
-$('#next').click(function() {
-  swap('clockwise');
-});
+// //next button click function
+// $('#next').click(function() {
+//   swap('clockwise');
+// });
 
-//prev button click function
-$('#prev').click(function() {
-  swap('counter-clockwise');
-});
+// //prev button click function
+// $('#prev').click(function() {
+//   swap('counter-clockwise');
+// });
 
-//if any visible items are clicked
-$('li').click(function() {
-  if($(this).attr('class') == 'items left-pos') {
-     swap('counter-clockwise'); 
-  }
-  else {
-    swap('clockwise'); 
-  }
-});
+// //if any visible items are clicked
+// $('li').click(function() {
+//   if($(this).attr('class') == 'items left-pos') {
+//      swap('counter-clockwise'); 
+//   }
+//   else {
+//     swap('clockwise'); 
+//   }
+// });
 
 
 //pierwszy slajder
@@ -348,124 +348,371 @@ $('li').click(function() {
 
 //trzeci
 
-var $item = 0,
-$itemNo = $(".hero figure").length;
-function transitionSlide() {
-$item++;
-if ($item > $itemNo - 1) {
-  $item = 0;
-}
-$(".hero figure").removeClass("on");
-$(".hero figure")
-  .eq($item)
-  .addClass("on");
-}
-var $autoTransition = setInterval(transitionSlide, 5500);
+// var $item = 0,
+// $itemNo = $(".hero figure").length;
+// function transitionSlide() {
+// $item++;
+// if ($item > $itemNo - 1) {
+//   $item = 0;
+// }
+// $(".hero figure").removeClass("on");
+// $(".hero figure")
+//   .eq($item)
+//   .addClass("on");
+// }
+// var $autoTransition = setInterval(transitionSlide, 5500);
 
-$(".hero figure").click(function() {
-clearInterval($autoTransition);
-$item = $(this).index();
-$(".hero figure").removeClass("on");
-$(".hero figure")
-  .eq($item)
-  .addClass("on");
-$autoTransition = setInterval(transitionSlide, 5500);
-});
-
-
-
-
-const current = document.querySelector('#current');
-const imgs = document.querySelector('.imgs');
-const img = document.querySelectorAll('.imgs img');
-const opacity = 0.6;
-
-// Set first img opacity
-img[0].style.opacity = opacity;
-
-imgs.addEventListener('click', imgClick);
-
-function imgClick(e) {
-  // Reset the opacity
-  img.forEach(img => (img.style.opacity = 1));
-
-  // Change current image to src of clicked image
-  current.src = e.target.src;
-
-  // Add fade in class
-  current.classList.add('fade-in');
-
-  // Remove fade-in class after .5 seconds
-  setTimeout(() => current.classList.remove('fade-in'), 500);
-
-  // Change the opacity to opacity var
-  e.target.style.opacity = opacity;
-}
+// $(".hero figure").click(function() {
+// clearInterval($autoTransition);
+// $item = $(this).index();
+// $(".hero figure").removeClass("on");
+// $(".hero figure")
+//   .eq($item)
+//   .addClass("on");
+// $autoTransition = setInterval(transitionSlide, 5500);
+// });
 
 
 
 
-console.clear();
-initslider();
-function initslider() {
-  const elPrevButton = document.querySelector('.slider #prev');
-  const elNextButton = document.querySelector('.slider #next');
+// const current = document.querySelector('#current');
+// const imgs = document.querySelector('.imgs');
+// const img = document.querySelectorAll('.imgs img');
+// const opacity = 0.6;
 
-  const elImages = Array.from(document.querySelectorAll('.slider .image'));
+// // Set first img opacity
+// img[0].style.opacity = opacity;
 
-  let state = {
-    photo: 0
-  };
+// imgs.addEventListener('click', imgClick);
 
-  function send(event) {
+// function imgClick(e) {
+//   // Reset the opacity
+//   img.forEach(img => (img.style.opacity = 1));
 
-    const elActives = document.querySelectorAll('.slider [data-active]');
+//   // Change current image to src of clicked image
+//   current.src = e.target.src;
 
-    Array.from(elActives)
-      .forEach(el => el.removeAttribute('data-active'));
+//   // Add fade in class
+//   current.classList.add('fade-in');
 
-    switch (event) {
-      case 'PREV':
-        state.photo--;
-        // Math.max(state.photo - 1, 0);
-        break;
-      case 'NEXT':
-        state.photo++;
-        // Math.min(state.photo + 1, elImages.length - 1);
-        break;
-      default:
-        state.photo = +event;
-        break;
-    }
+//   // Remove fade-in class after .5 seconds
+//   setTimeout(() => current.classList.remove('fade-in'), 500);
 
-    var len = elImages.length;
-    // Loop Around
-    //state.photo = ( ( state.photo % len) + len ) % len;
-    state.photo = Math.max(0, Math.min( state.photo, len - 1) );
-
-    Array.from(document.querySelectorAll(`.slider [data-key="${state.photo}"]`))
-      .forEach( el => {
-      el.setAttribute('data-active', true);
-    });
+//   // Change the opacity to opacity var
+//   e.target.style.opacity = opacity;
+// }
 
 
-  }
-  elPrevButton.addEventListener('click', () => {
-    send('PREV');
-  });
 
-  elNextButton.addEventListener('click', () => {
-    send('NEXT');
-  });
 
-  const elStatus = Array.from(document.querySelectorAll('.slider .stat'));
-  elStatus.forEach( stat => { 
-    stat.addEventListener('click', () => {
-      send(stat.dataset.key);
-    });
-  });
-  send(0);
+// console.clear();
+// initslider();
+// function initslider() {
+//   const elPrevButton = document.querySelector('.slider #prev');
+//   const elNextButton = document.querySelector('.slider #next');
+
+//   const elImages = Array.from(document.querySelectorAll('.slider .image'));
+
+//   let state = {
+//     photo: 0
+//   };
+
+//   function send(event) {
+
+//     const elActives = document.querySelectorAll('.slider [data-active]');
+
+//     Array.from(elActives)
+//       .forEach(el => el.removeAttribute('data-active'));
+
+//     switch (event) {
+//       case 'PREV':
+//         state.photo--;
+//         // Math.max(state.photo - 1, 0);
+//         break;
+//       case 'NEXT':
+//         state.photo++;
+//         // Math.min(state.photo + 1, elImages.length - 1);
+//         break;
+//       default:
+//         state.photo = +event;
+//         break;
+//     }
+
+//     var len = elImages.length;
+//     // Loop Around
+//     //state.photo = ( ( state.photo % len) + len ) % len;
+//     state.photo = Math.max(0, Math.min( state.photo, len - 1) );
+
+//     Array.from(document.querySelectorAll(`.slider [data-key="${state.photo}"]`))
+//       .forEach( el => {
+//       el.setAttribute('data-active', true);
+//     });
+
+
+//   }
+//   elPrevButton.addEventListener('click', () => {
+//     send('PREV');
+//   });
+
+//   elNextButton.addEventListener('click', () => {
+//     send('NEXT');
+//   });
+
+//   const elStatus = Array.from(document.querySelectorAll('.slider .stat'));
+//   elStatus.forEach( stat => { 
+//     stat.addEventListener('click', () => {
+//       send(stat.dataset.key);
+//     });
+//   });
+//   send(0);
+// };
+
+
+(function($) {
+ 
+    var Slider = (function () {
+      
+        function _Slider(element, settings) {
+            this.defaults = {
+                slideDuration: '3000',
+                speed: 500
+                /*
+                ,
+                arrowRight: '.right-arrow',
+                arrowLeft: '.left-arrow'
+                */
+            };
+
+            this.settings = $.extend({}, this.defaults, settings);
+
+            this.initials = {
+                currentSlide: 0,
+                $currentSlide: null,
+                totalSlides: false,
+                cssTransitions: false
+            };
+
+            $.extend(this, this.initials);
+
+            this.$el = $(element);
+
+            this.changeSlide = $.proxy(this.changeSlide, this);
+
+            this.init();
+
+        }
+
+        return _Slider;
+
+    })();
+
+    Slider.prototype.init = function () {
+        this.cssTransitionTest();
+        this.$el.addClass('slider');
+        this.build();
+        this.events();
+        this.activate();
+        this.initTimer();
+    };
+
+    Slider.prototype.cssTransitionTest = function () {
+        var elem = document.createElement('modernizr');
+
+        var props = ['transition', 'WebkitTransition', 'MozTransition', 'OTransition', 'msTransition'];
+
+        for (var i in props) {
+            var prop = props[i];
+            var result = elem.style[prop] !== undefined ? prop : false;
+            if (result) {
+                this.cssTransitions = result;
+                break;
+            }
+        }
+    };
+
+    Slider.prototype.addCSSDuration = function () {
+        var sliderModule = this;
+
+        sliderModule.$el.find('.testimonial-slide').each(function () {
+
+            this.style[sliderModule.cssTransitions + 'Duration'] = sliderModule.settings.speed + 'ms';
+        });
+    };
+
+    Slider.prototype.removeCSSDuration = function () {
+        var sliderModule = this;
+
+        //here we are using 'this' but we can also write sliderModule
+        //since we are refering to the same element...shorter and cleaner
+        this.$el.find('.testimonial-slide').each(function () {
+            this.style[sliderModule.cssTransitions + 'Duration'] = '';
+        });
+    };
+
+
+    //create indicator dots below which also have the functionality
+    //as the arrows
+    Slider.prototype.build = function () {
+        var $indicators = this.$el.append("<ul class='dots-wrapper'>").find('.dots-wrapper');
+        this.totalSlides = this.$el.find('.testimonial-slide').length;
+        for (var i = 0; i < this.totalSlides; i++) {
+            $indicators.append("<li data-index=" + i + ">");
+        }
+    };
+
+    Slider.prototype.activate = function () {
+        this.$currentSlide = this.$el.find('.testimonial-slide').eq(0);
+        this.$el.find('.dots-wrapper li').eq(0).addClass('active');
+    };
+
+    Slider.prototype.events = function () {
+        $('body')
+            .on('click', this.settings.arrowRight, {
+            direction: 'right'
+        }, this.changeSlide)
+            .on('click', this.settings.arrowLeft, {
+            direction: 'left'
+        }, this.changeSlide)
+            .on('click', '.dots-wrapper li', this.changeSlide);
+    };
+
+    Slider.prototype.clearTimer = function () {
+        if (this.timer) {
+            clearInterval(this.timer);
+        }
+    };
+
+    Slider.prototype.initTimer = function () {
+        this.timer = setInterval(
+        this.changeSlide, this.settings.slideDuration);
+    };
+
+    Slider.prototype.startTimer = function () {
+        this.initTimer();
+        this.throttle = false;
+    };
+
+    Slider.prototype.changeSlide = function (e) {
+        if (this.throttle) {
+            return;
+        }
+        this.throttle = true;
+
+        this.clearTimer();
+
+        var direction = this._direction(e);
+
+        var animate = this._next(e, direction);
+        if (!animate) {
+            return;
+        }
+
+        var $nextSlide = this.$el.find('.testimonial-slide').eq(this.currentSlide).addClass(direction + ' active');
+
+        if (!this.csstransitions) {
+            this._jsAnimation($nextSlide, direction);
+        } else {
+            this._cssAnimation($nextSlide, direction);
+        }
+    };
+
+    Slider.prototype._direction = function (e) {
+        var direction;
+        if (typeof e !== 'undefined') {
+            direction = (typeof e.data === 'undefined' ? 'right' : e.data.direction);
+        } else {
+            direction = 'right';
+        }
+        return direction;
+    };
+
+    Slider.prototype._next = function (e, direction) {
+        var index = (typeof e !== 'undefined' ? $(e.currentTarget).data('index') : undefined);
+        switch (true) {
+            case (typeof index !== 'undefined'):
+                if (this.currentSlide == index) {
+                    this.startTimer();
+                    return false;
+                }
+                this.currentSlide = index;
+                break;
+            case (direction == 'right' && this.currentSlide < (this.totalSlides - 1)):
+                this.currentSlide++;
+                break;
+            case (direction == 'right'):
+                this.currentSlide = 0;
+                break;
+            case (direction == 'left' && this.currentSlide === 0):
+                this.currentSlide = (this.totalSlides - 1);
+                break;
+            case (direction == 'left'):
+                this.currentSlide--;
+                break;
+        }
+        return true;
+    };
+
+    Slider.prototype._cssAnimation = function ($nextSlide, direction) {
+        setTimeout(function () {
+            this.$el.addClass('transition');
+            this.addDuration();
+            this.$currentSlide.addClass('shift' + direction);
+        }.bind(this), 100);
+
+        setTimeout(function () {
+            this.$el.removeClass('transition');
+            this.removeCSSDuration();
+            this.$currentSlide.removeClass('active shift-left shift-right');
+            this.$currentSlide = $nextSlide.removeClass(direction);
+            this._updateIndicators();
+            this.startTimer();
+        }.bind(this), 100 + this.settings.speed);
+    };
+
+    Slider.prototype._jsAnimation = function ($nextSlide, direction) {
+        var sliderModule = this;
+
+        if (direction == 'right') {
+            sliderModule.$currentSlide.addClass('js-reset-left');
+        }
+        var animation = {};
+        animation[direction] = '0%';
+
+        var animationPrev = {};
+        animationPrev[direction] = '100%';
+
+        this.$currentSlide.animate(animationPrev, this.settings.speed);
+
+        $nextSlide.animate(animation, this.settings.speed, 'swing', function () {
+            sliderModule.$currentSlide.removeClass('active js-reset-left').attr('style', '');
+            sliderModule.$currentSlide = $nextSlide.removeClass(direction).attr('style', '');
+            sliderModule._updateIndicators();
+            sliderModule.startTimer();
+        });
+    };
+
+    Slider.prototype._updateIndicators = function () {
+        this.$el.find('.dots-wrapper li').removeClass('active').eq(this.currentSlide).addClass('active');
+    };
+
+    $.fn.Slider = function (options) {
+        return this.each(function (index, el) {
+            el.Slider = new Slider(el, options);
+        });
+    };
+})(jQuery);
+
+var args = {
+    arrowRight: '.right-arrow',
+    arrowLeft: '.left-arrow',
+    speed: 500,
+    slideDuration: 3000
 };
+
+$('.testimonial').Slider(args);
+
+
+
 
 
 });
