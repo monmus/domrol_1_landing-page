@@ -56,6 +56,10 @@ $(document).ready(() => {
         $("html, body").animate({ scrollTop: $(".js--section-about").offset().top }, 1000);
     });
 
+    $(".js--scroll-to-clients").click(function () {
+        $("html, body").animate({ scrollTop: $(".js--section-clients").offset().top }, 1000);
+    });
+
     // Animations on scroll 
     $(".js--section-about").waypoint(function () {
         this.element.querySelector(".heading-secondary").style.animation = "moveFromTop .75s ease-in forwards";
