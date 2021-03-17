@@ -580,6 +580,11 @@ figure {
   position: absolute;
   top: 150px;
   background-size: contain;
+
+  @media(max-width: 400px) {
+   height: auto;
+}
+
 }
 
 .lightbox:target {
