@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:image" content="img/fot3a.JPG" />
+    <meta name="keywords" content="żaluzje, rolety, plisy">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="dist/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo_czarne.png">
+
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!--     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dotimeout/1.0/jquery.ba-dotimeout.min.js"></script>
+    <title>DOMROL - osłony okienne</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+          $("html").on("submit","#contact_form",function(e){
+            console.log("test")
+            e.preventDefault();
+            $("#send_form_status").html('').hide();
+            var data=$("#contact_form").serialize();
+            $.post("send_form.php",data,function(res){
+              $("#send_form_status").html(res.msg).show();
+              if(res.status==1){ 
+                $("#contact_form")[0].reset();
+              } 
+            });
+          });
+        });
+        </script>
+
+</head>
+<body>
+    <header class="header1">
+        <nav class="navigation">
+            <a href="./index.html"><img src="img/logo_zlote_biale.png" alt="logo" class="navigation__logo"></a>
+            <a href="./index.html"><img src="img/logo_czarne.png" alt="logo" class="navigation__logo--black"></a>
+        
+            <!-- <i class="fas fa-home" style="color: rgb(144, 124, 6); font-size:45px"></i> -->
+
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="index.html#about" class="navigation__link js--scroll-to-about">o nas</a></li>
+                <li class="navigation__item"><a href="index.html#oferta" class="navigation__link js--scroll-to-profit">oferta</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link js--scroll-to-about1">poradnik</a></li>
+                <li class="navigation__item"><a href="#footer" class="navigation__link js--scroll-to-footer">kontakt</a></li>
+                <li class="navigation__item navigation__list--close" id="close-menu">&times;</li>
+            </ul>
+            <ion-icon name="menu" class="icon icon--menu" id="open-menu"></ion-icon>
+        </nav>
+    
+        <div class="header1__text-box">
+            <div class="section-overlay-mask1">
+            <span class="header__small-text">Poradnik</span>
+            <h1 class="heading-primary">
+               Jak czyścić i konserwować nasze produkty
+            </h1>
+            </div>
+            <!-- <a href="#" class="btn btn--blue margin-right-medium btn--animated js--scroll-to-reserve">Записаться</a>
+            <a href="#" class="btn btn--white btn--animated js--scroll-to-start">Узнать больше</a> -->
+        </div>
+    </header>
+
+    <section class="section-about1 js--section-about1">
+        <div class="row">
+            <!-- <h2 class="heading-secondary u-center-text js--animated">
+                Doradzamy, sprzedajemy, montujemy i naprawiamy osłony okienne!
+            </h2> -->
+
+
+            <div class="container container-fluid">
+
+                <div class="accordion">
+                  <ul class="list-unstyled">
+                    <li class="open">
+                      <div class="question">
+                        <h2>żaluzje poziome aluminiowe i drewniane</h2>
+                        <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                      </div>
+                      <div class="answer">
+                        <p>W przypadku drewna, środkami ochrony do drewna, przecieranie każdej lameli z osobna. Elementy plastikowe można przetrzeć wodą z płynem do naczyń. Nie płukać żaluzji w wodzie. Elementy metalowe będą rdzewieć. Mechanizmy można smarować środkami smarującymi typu WD40 lub smarem silikonowym w spreyu. Elementy uszkodzone można wymienić na nowe.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="question">
+                        <h2>rolety materiałowe</h2>
+                        <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                      </div>
+                      <div class="answer">
+                        <p>Czyszczenie elementów plastikowych lub aluminiowych środkami np: płyn do mycia naczyń rozcieńczony w wodzie lub mleczko do pielęgnacji elementów plastikowych i metalowych. Materiału nie czyści się ze względu na możliwość uszkodzenia struktury tkaniny. Dobre materiały w zależności o gatunku potrafią wytrzymać od 5 do 10 lat. Po zużyciu lub uszkodzeniu można sam materiał wymienić. Materiały są pokryte impregnatem który powoduje że materiał jest antystatyczny, nie przyciąga kurzu i nie blaknie pod wpływem słońca w krótkim okresie. Mechanizmy można smarować środkami smarującymi typu WD40 lub smarem silikonowym w spreyu. Elementy uszkodzone można wymienić na nowe.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="question">
+                        <h2>żaluzje pionowe</h2>
+                        <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                      </div>
+                      <div class="answer">
+                        <p>Czyszczenie elementów plastikowych lub aluminiowych środkami np: płyn do mycia naczyń rozcieńczony w wodzie lub mleczko do pielęgnacji elementów plastikowych i metalowych. Materiału nie czyści się ze względu na możliwość uszkodzenia struktury tkaniny. Dopuszczalne jest czyszczenie materiału w specjalnej maszynie z odpowiednimi detergentami pod warunkiem sprawdzenia materiału ( próbki ) na uszkodzenie i czyszczenie. Czyszczenie chemiczne może nie doczyścić tkaniny w przypadku mocnego zabrudzenia. Mechanizmy można smarować środkami smarującymi typu WD40 lub smarem silikonowym w spreyu. Elementy uszkodzone można wymienić na nowe</p>
+                      </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                          <h2>rolety zewnętrzne aluminiowe</h2>
+                          <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                        </div>
+                        <div class="answer">
+                          <p> Elementy plastikowe można przetrzeć wodą z płynem do naczyń. Mechanizmy można smarować środkami smarującymi typu WD40 lub smarem silikonowym w spreyu. Elementy uszkodzone można wymienić na nowe. Rolety wyposażone w elementy służące do obsługi ręcznej powinno się serwisować co około 3 do 4 lat. Zużyte elementy wymienić  na nowe np:  sznurek ,rolka prowadząca sznurek, mechanizm zwijający, wieszaki. W przypadku rolet sterowanych elektryczne serwis powinien być przeprowadzony co 4 - 5 lat, w celu sprawdzenia zużycia wieszaków i poprawności działania silnika.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="question">
+                          <h2> plisy </h2>
+                          <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                        </div>
+                        <div class="answer">
+                          <p>Czyszczenie elementów plastikowych lub aluminiowych środkami np: płyn do mycia naczyń rozcieńczony w wodzie lub mleczko do pielęgnacji elementów plastikowych i metalowych. Materiału nie czyści się ze względu na możliwość uszkodzenia struktury tkaniny. Dobre materiały w zależności o gatunku potrafią wytrzymać nawet od 10 do 15 lat. Po zużyciu lub uszkodzeniu można sam materiał wymienić. Materiały są pokryte impregnatem który powoduje że materiał jest antystatyczny, nie przyciąga kurzu i nie blaknie pod wpływem słońca w krótkim okresie. Przy nie których materiałach możliwe jest pranie/ płukanie materiału w temperaturze około 30 stopni z niewielką ilością detergentu bez czyszczenia gąbką. Próbę taką najlepiej wykonać na produkcie z pomieszczenia najmniej ważnego lub gdzie jest tylko 1 produkt. Po umyciu zamontować produkt w pozycji złożonej. Po wyschnięciu sprawdzić działanie i materiał pod kątem efektu czyszczenia. Na materiale mogą zostać zacieki.  Elementy uszkodzone można wymienić na nowe, jeżeli są dalej produkowane.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="question">
+                          <h2> moskitiery  ramkowe </h2>
+                          <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                        </div>
+                        <div class="answer">
+                          <p>Można myć wodą z dodatkiem detergentu. Najlepiej gąbką i spłukać. Ramka jest aluminiowa z siatka z włókna szklanego pokryta winylem. Uszkodzoną siatkę można wymienić.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="question">
+                          <h2> Markizy tarasowe lub balkonowe </h2>
+                          <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                        </div>
+                        <div class="answer">
+                          <p>Czyszczenie elementów plastikowych lub aluminiowych środkami np: płyn do mycia naczyń rozcieńczony w wodzie lub mleczko do pielęgnacji elementów plastikowych i metalowych. Mechanizmy można smarować środkami smarującymi typu WD40 lub smarem silikonowym w spreyu. Elementy uszkodzone w zależności od systemu można wymienić na nowe. Materiały są pokryte impregnatem ( teflon ) który chroni materiał przed warunkami atmosferycznymi.</p>
+                        
+                        
+                          <p>Podczas użytkowania markizy należy postępować zgodnie z poniższymi zaleceniami, których nieprzestrzeganie może doprowadzić
+                            do uszkodzenia markizy: </p>
+                        <ul>
+                            <li>W przypadku wystąpienia opadów deszczu, śniegu lub silnego wiatru należy bezzwłocznie zamknąć markizę</li>
+                            <li>Markiza jest przystosowana do pracy w temperaturze od 0°C do + 65°C</li>
+                            <li>Markizy z napędem elektromechanicznym mogą być używane tylko do pracy w ruchu przerywanym. Ciągła praca silnika
+                                markizy nie może przekroczyć 4 minut</li>
+                            <li>W przypadku zastosowania napędu elektromechanicznego zaleca się stosowanie czujnika wiatrowo - słonecznego</li>
+                            <li>Nie należy przebywać pod markizą podczas jej otwierania bądź zamykania</li>
+                            <li>Nie można umieszczać jakichkolwiek przedmiotów na ramionach lub pokryciu markizy</li>
+                            <li>Zaleca się aby tkanina przed zamknięciem markizy była czysta i sucha aby uniknąć jej uszkodzenia</li>
+                            <li>Nie należy dokonywać własnoręcznych napraw i modyfikacji w mechanizmach i konstrukcji markizy</li>
+                            <li>W przypadku nieprawidłowego działania markizy należy skontaktować się z producentem</li>
+                            <li>W przypadku awarii systemu zawieszenia markizy należy ją zabezpieczyć w danym położeniu do momentu przybycia ekipy
+                                serwisowej</li>
+                        </ul>
+                        
+                            <p>W markizach stosuje się tkaniny PARA o nazwie Tempotest, które doskonale sprawdzają
+                            się na zewnątrz. Tkaniny te objęte są 8-letnią gwarancją producenta. Zalety tkanin Tempotest: </p>
+                        <ul>
+                            <li>Odporne na blaknięcie kolorów<br>
+                                Siła słońca potrafi zmienić kolor nawet wytrzymałych barwników, jednak dzięki rozwiązaniom firmy PARA tkaniny Tempotest są
+                                odporne na blaknięcie przez długie lata, co potwierdza 8-letnia gwarancja</li>
+                            <li>Odporne na zabrudzenia <br>
+                                Podczas użytkowania markizy czasami nie jest trudno o przypadkowe zabrudzenia. Teraz nie trzeba się ich obawiać, ponieważ
+                                tkaniny Tempotest są odporne na zabrudzenia tłuszczem, ziemią, solą, nie chłoną wody czy innych płynów, nie powstają na nich
+                                plamy</li>
+                            <li>Odporne na grzyby <br>
+                                Każda tkanina umieszczona na zewnątrz jest narażona na działanie niekorzystnych warunków atmosferycznych oraz działanie
+                                grzybów i pleśni. Tempotest to rozwiązanie najlepsze z możliwych – tkaniny są odporne na działanie pleśni i grzybów.</li>
+                            <li>Oddychające <br>
+                                Ważną cechą materiałów Tempotest jest przepuszczalność powietrza. Dzięki temu materiał oddycha, nie utrudnia wymiany
+                                powietrza na powierzchni tarasowej czy balkonowej, szybciej schnie i na dłużej zachowuje żywotność.Ogólne zalecenia</li>
+                        </ul>
+                        
+                        </div>
+                      </li>
+                  </ul>
+                </div>
+              
+              </div>
+    
+    </section>
+
+
+    <section class="section-clients1 js--section-clients" id="clients">
+       
+            <div class="newsletter-bg">
+                
+            </div>
+       
+    </section> 
+
+
+    <footer class="footer js--footer" id="footer">
+        <div class="row">
+            <div class="footer__info">
+                <span class="header__small-text">Zapraszamy do kontaktu | Umów się na pomiar</span>
+            </div>
+            <div class="footer__display">
+            <div class="footer__contact">
+                <h3 class="footer__contact--heading">
+                    Firma Handlowo-Usługowa DOMROL <br> Dominik Zając
+                </h3>
+                <p class="footer__contact--text">
+                    os. Piastów 1B/13, 31-623 Kraków
+                    NIP: 678 207 89 52, Regon: 120439190 <br><br>
+                    Jesteśmy do Państwa usług od poniedziałku do soboty
+                    w godzinach od 10.00 do 19.00. <br>
+
+                    Zamów bezpłatne spotkanie, w miejscu i terminie dla Ciebie wygodnym.
+                    Dokonamy pomiaru i przedstawimy wycenę na wybrane przez Ciebie produkty. <br><br>
+
+                    <i class="fas fa-envelope" style="color: rgb(144, 124, 6)"></i><span style='color:white'> info@oslonyokienne.eu |</span>
+                    <a href="tel:+48508958578" style="text-decoration: none">
+                        <i class="fa fa-phone" aria-hidden="true"  style="color: rgb(144, 124, 6)"></i><span style='color:white'> 508-948-578</span>
+                    </a>
+                </p>
+            </div>
+
+
+            <div class="footer__contact">
+                <h3 class="footer__contact--heading">Formularz kontaktowy</h3>
+             
+                <br>
+                <div id="send_form_status"></div>
+                <form method="post" action="send_form.php" id="contact_form">
+                     <!-- <div><label for="name">Imię i nazwisko</label></div> -->
+                     <div><input type="text" name="name" id="name" class="formField" placeholder="Imię i nazwisko" /></div>
+                     <!-- <div><label for="phone">Numer telefonu</label></div> -->
+                     <div><input type="text" name="phone" id="phone" class="formField" placeholder="Numer telefonu" /></div>
+                     <!-- <div><label for="email">Adres email</label></div> -->
+                     <div><input type="text" name="email" id="email" class="formField" placeholder="Adres email" /></div>
+                     <!-- <div><label for="message">Treść wiadomości</label></div> -->
+                     <div><textarea name="message" id="message" class="formField" placeholder="Treść wiadomości"></textarea></div>
+                     <div><button id="sendBtn">Wyślij</button></div>
+                </form>
+            </div>
+            </div>
+            
+            
+            <div class="footer__copyright">
+                Copyright &copy; by Monik@. 2021
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   -->
+    
+
+    <script src="dist/js/jquery.waypoints.min.js"></script>
+    <script src="dist/js/script.js"></script>
+
+</body>
+</html>

@@ -13,13 +13,13 @@
         transform: scale(1.02) translateY(-.4rem);
     }
 
-    &--blue {
-        border: 2px solid var(--dark-primary-color);
-        background-color: var(--dark-primary-color);
+    &--gold {
+        border: 2px solid rgb(144, 124, 6);
+        background-color: rgb(144, 124, 6);
 
         &:hover {
-            background-color: var(--darker-primary-color);
-            border: 2px solid var(--darker-primary-color);
+            background-color: rgb(144, 124, 6);
+            // border: 2px solid var(--darker-primary-color);
         }
     }
 

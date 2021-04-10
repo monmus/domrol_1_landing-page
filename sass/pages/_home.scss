@@ -1,5 +1,5 @@
 .section-about {
-    padding-top: 5rem;
+    padding-top: 10rem;
     padding-bottom: 20rem; 
     background-color: #fff;
  
@@ -21,6 +21,110 @@
 
     // @include triangularSliceBottom;
 }
+
+//poradnik
+
+.section-about1 {
+  padding-top: 5rem;
+  // padding-bottom: 20rem; 
+  background-color: #fff;
+
+
+
+  ul {
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .accordion {
+    background: #FFF;
+    border-radius: 5px;
+    padding: 30px;
+  }
+  
+  .question {
+    border-top: 1px solid #EEE;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .question h2 {
+    font-size: 20px;
+    margin: 0;
+    color: rgb(197, 170, 13);
+    text-transform: uppercase;
+  }
+  
+  .question span {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #C00C00;
+    transition: .75s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  }
+  
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: .75s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+    
+  ul {
+    padding: 25px;
+    list-style: disc;
+    li{
+      line-height: 25px;
+      font-weight: 100;
+    }
+  }
+  }
+  
+  .answer p {
+    padding: 20px;
+    font-weight: 100;
+  }
+  
+  .accordion li.open .question span {
+    transform: rotate(180deg);
+  }
+  
+  .accordion li.open .answer {
+    max-height: 2235px;
+  }
+
+
+
+
+  &__features {
+      display: flex;
+      padding: 4rem 0;
+
+      @media(max-width: 900px) {
+          flex-direction: column;
+      }
+  }
+
+  &__text {
+      font-weight: 700;
+      text-align: center;
+      font-size: 3.5rem;
+      text-transform: uppercase;
+  }
+
+  // @include triangularSliceBottom;
+}
+
+
+
+
+
+
+
+
+
 
 .section-quotations {
   
@@ -49,7 +153,7 @@
 }
 
 .section-clients {
-    padding: 5rem 0 10rem 0;
+    padding: 10rem 0 10rem 0;
     background-color: var(--background-primary-color-dark);
 
     &__features {
@@ -60,7 +164,28 @@
         }
     }
 
-    @include triangularSliceBottom;
+    // @include triangularSliceBottom;
+}
+
+
+//poradnik
+.section-clients1 {
+
+  background-color: var(--background-primary-color-dark);
+
+  .newsletter-bg {
+    padding: 5rem 0;
+    background: url(../img/fot3a.jpg);
+    height: 420px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-width: 100%;
+    background-position: center;
+    z-index: -1;
+
+  // @include triangularSliceBottom;
+}
 }
 
 .section-profit {
@@ -72,6 +197,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
+    height: 575px;
 
     @media(max-width: 600px) {
         background-size: cover;
@@ -111,7 +237,7 @@
 
     &__heading {
         // font-style: italic; 
-        margin-top: 35px;
+        margin-top: 85px;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -211,9 +337,9 @@
   font-weight: 300;
   text-align:center;
   color: rgb(0, 0, 0);
-  font-size:1.4em;
+  // font-size:1.4em;
   padding:15px 0;
-  top:50%;
+  // top:50%;
   position:relative;
   transform:translateY(-20%);
 }

@@ -22,6 +22,27 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dotimeout/1.0/jquery.ba-dotimeout.min.js"></script>
     <title>DOMROL - osłony okienne</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+          $("html").on("submit","#contact_form",function(e){
+            console.log("test")
+            e.preventDefault();
+            $("#send_form_status").html('').hide();
+            var data=$("#contact_form").serialize();
+            $.post("send_form.php",data,function(res){
+              $("#send_form_status").html(res.msg).show();
+              if(res.status==1){ 
+                $("#contact_form")[0].reset();
+              } 
+            });
+          });
+        });
+        </script>
+
 </head>
 <body>
     <header class="header">
@@ -53,14 +74,11 @@
         </div>
     </header>
 
-    <section class="section-about js--section-about">
+    <section class="section-about js--section-about " id="about">
         <div class="row">
             <h2 class="heading-secondary u-center-text js--animated">
                 Doradzamy, sprzedajemy, montujemy i naprawiamy osłony okienne!
             </h2>
-            <!-- <p class="section-about__text">
-                Nasza oferta:
-            </p> -->
 
             <div class="section-about__features js--animated">
                 <div class="feature">
@@ -87,86 +105,11 @@
                 </div>
             </div>
 
-            <!-- <div class="u-center-text">
-                <a href="#" class="btn btn--blue">
-                    Забронировать
-                </a>
-            </div> -->
-
         </div>
     </section>
-<!-- 
-    <section class="section-quotations js--section-quotations">
-        <div class="quote-box">
-            <figure class="quote-box__quotation quote-box__quotation--visible">
-                <blockquote class="quote-box__text">
-                    "Делай сегодня то, что другие не хотят, завтра будешь жить так, как другие не могут."
-                </blockquote>
-                <figcaption class="quote-box__author">
-                    Джаред Лето
-                </figcaption>
-            </figure>
 
-            <figure class="quote-box__quotation">
-                <blockquote class="quote-box__text">
-                    "Возможности не приходят сами — вы сами создаёте их."
-                </blockquote>
-                <figcaption class="quote-box__author">
-                    Крисс Гроссер
-                </figcaption>
-            </figure>
 
-            <figure class="quote-box__quotation">
-                <blockquote class="quote-box__text">
-                    «Если вы работаете над тем, что для вас действительно важно, вас не приходится подгонять. Вас тянет вперед ваша мечта.»
-                </blockquote>
-                <figcaption class="quote-box__author">
-                    Стив Джобс
-                </figcaption>
-            </figure>
-
-            <figure class="quote-box__quotation">
-                <blockquote class="quote-box__text">
-                    "Лучший способ взяться за что-то — перестать говорить и начать делать."
-                </blockquote>
-                <figcaption class="quote-box__author">
-                    Уолт Дисней
-                </figcaption>
-            </figure>
-        </div>
-    </section> -->
-<!-- 
-    <section class="section-clients js--section-clients">
-        <div class="row">
-            <h2 class="heading-secondary u-center-text margin-bottom-big">Кому подойдёт этот вебинар?</h2>
-
-            <div class="section-clients__features js--animated">
-                <div class="feature">
-                    <ion-icon name="happy" class="icon icon-big"></ion-icon>
-                    <h3 class="heading-tertiary">Дебютанты</h3>
-                    <p class="paragraph feature__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
-                    </p>
-                </div>
-                <div class="feature">
-                    <ion-icon name="contacts" class="icon icon-big"></ion-icon>
-                    <h3 class="heading-tertiary">Менеджеры по продажам</h3>
-                    <p class="paragraph feature__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
-                    </p>
-                </div>
-                <div class="feature">
-                    <ion-icon name="paper" class="icon icon-big"></ion-icon>
-                    <h3 class="heading-tertiary">Опытные предприниматели</h3>
-                    <p class="paragraph feature__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section class="section-profit js--section-profit">
+    <section class="section-profit js--section-profit" id="oferta">
         <div class="section-overlay-mask1">
         <h2 class="heading-secondary heading-secondary--white
         u-center-text margin-bottom-big section-profit__heading">W naszej ofercie znajdują się produkty dwóch producentów osłon okiennych dzięki czemu mamy szeroki wybór:</h2>
@@ -298,9 +241,18 @@
 
     <section class="section-clients js--section-clients" id="clients">
         <div class="row">
-            <h2 class="heading-secondary u-center-text margin-bottom-big">WSKAZÓWKI JAK DBAĆ O NASZE PRODUKTY</h2>
+            <h2 class="heading-secondary u-center-text margin-bottom-big">JAK DBAĆ O NASZE PRODUKTY? <br><br>
+           
+            Przydatne porady i wskazówki jak czyścić i konserwować rolety, moskitiery oraz żaluzje </h2>
 
-            <div class="section-clients__features js--animated">
+            
+            <div class="u-center-text">
+                <a href="./poradnik.html" class="btn btn--gold">
+                   Dowiedz się więcej
+                </a>
+            </div>
+        
+            <!-- <div class="section-clients__features js--animated">
                 <div class="feature">
                     <ion-icon name="happy" class="icon icon-big" style="color: rgb(144, 124, 6)"></ion-icon>
                     <h3 class="heading-tertiary">CZYSZCZENIE</h3>
@@ -315,35 +267,32 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
                     </p>
                 </div>
-                <!-- <div class="feature">
-                    <ion-icon name="paper" class="icon icon-big"></ion-icon>
-                    <h3 class="heading-tertiary">Опытные предприниматели</h3>
-                    <p class="paragraph feature__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam arcu, vitae auctor risus convallis consectetur. Nulla cursus eros mauris, sit amet sollicitudin mi ornare sed.
-                    </p>
-                </div> -->
-            </div>
+            </div> -->
         </div>
     </section> 
 
 
 
-
+<!-- 
     <section class="section-organisers1 js--section-organisers"> 
         <div class="wrapper">
             <div class="testimonial">
               <ul class="testimonial-ul">
                 <li class="testimonial-slide active">
                   <p class="slidePara"> Jestem bardzo zadowolona z rolet, które zamówiłam. Montaż przebiegł sprawnie i szybko.
-                  </p>
+                  </p> 
+                  <p>Agnieszka</p> 
+
                 </li>
                 <li class="testimonial-slide">
-                  <p class="slidePara"> Jestem bardzo zadowolona ze współpracy. Żaluzje są piękne, bardzo dobrej jakości.
+                  <p class="slidePara"> Bardzo dobra współpracy. Żaluzje są piękne, bardzo dobrej jakości.
                   </p>
+                  <p>Andrzej</p>
                 </li> 
                 <li class="testimonial-slide">
                   <p class="slidePara"> Serdecznie polecam!! Miła i profesjonalna obsługa. Szybki czas realizacji.
                   </p>
+                  <p>Justyna</p>
                 </li>
                 <span class="top-left"></span>
                 <span class="top-right"></span>
@@ -351,7 +300,7 @@
             </div>
         </div>
 
-    </section> 
+    </section>  -->
 
     
 
@@ -454,9 +403,9 @@
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  
+   -->
     
 
     <script src="dist/js/jquery.waypoints.min.js"></script>

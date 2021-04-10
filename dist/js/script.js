@@ -31,6 +31,16 @@ $(document).ready(() => {
         offset: "55px"
     });
 
+    $(".js--section-about1").waypoint(function (direction) {
+        if (direction == "down") {
+            $(".navigation").addClass("navigation--sticky");
+        } else {
+            $(".navigation").removeClass("navigation--sticky");
+        }
+    }, {
+        offset: "55px"
+    });
+
     // Scroll on buttons
     $(".js--scroll-to-reserve").click(function () {
         $("html, body").animate({ scrollTop: $(".js--section-reserve").offset().top }, 1500);
@@ -39,6 +49,11 @@ $(document).ready(() => {
     $(".js--scroll-to-start").click(function () {
         $("html, body").animate({ scrollTop: $(".js--section-about").offset().top }, 1000);
     });
+
+    $(".js--scroll-to-about1").click(function () {
+        $("html, body").animate({ scrollTop: $(".js--section-about1").offset().top }, 1000);
+    });
+
 
     $(".js--scroll-to-profit").click(function () {
         $("html, body").animate({ scrollTop: $(".js--section-profit").offset().top }, 1000);
@@ -716,7 +731,28 @@ var args = {
 $('.testimonial').Slider(args);
 
 
+//poradnik
 
+var accordion = document.querySelector('.accordion');
+var items = accordion.querySelectorAll('li');
+var questions = accordion.querySelectorAll('.question');
+
+//Funtions
+
+function toggleAccordion() {
+  var thisItem = this.parentNode;
+  items.forEach(item => {
+    if (thisItem == item) {
+      thisItem.classList.toggle('open');
+      return;
+    }
+    item.classList.remove('open');
+  });
+}
+
+//Event Listeners
+
+questions.forEach(question => question.addEventListener('click', toggleAccordion));
 
 
 });
