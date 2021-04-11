@@ -170,6 +170,7 @@
 
 //poradnik
 .section-clients1 {
+  height: 400px;
 
   // background-color: var(--background-primary-color-dark);
 
@@ -190,7 +191,7 @@
           background-image: url(../img/fot3a.JPG);
           background-size: contain;
           max-width: 100%;
-          // background-attachment: fixed;
+         background-attachment: scroll;
           background-repeat: no-repeat;
           background-position: center;
           z-index: -1;
