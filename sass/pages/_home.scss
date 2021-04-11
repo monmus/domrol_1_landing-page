@@ -50,10 +50,14 @@
   }
   
   .question h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
     color: rgb(197, 170, 13);
     text-transform: uppercase;
+
+    @media (max-width: 460px){
+      font-size: 15px;
+    }
   }
   
   .question span {
