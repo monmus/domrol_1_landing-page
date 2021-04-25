@@ -43,36 +43,36 @@ $(document).ready(() => {
 
     // Scroll on buttons
     $(".js--scroll-to-reserve").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-reserve").offset().top }, 1500);
+        $("html, body").animate({ scrollTop: $(".js--section-reserve").offset().top }, 2000);
     });
 
     $(".js--scroll-to-start").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-about").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--section-about").offset().top }, 2000);
     });
 
     $(".js--scroll-to-about1").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-about1").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--section-about1").offset().top }, 2000);
     });
 
 
     $(".js--scroll-to-profit").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-profit").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--section-profit").offset().top }, 2000);
     });
 
     $(".js--scroll-to-footer").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--footer").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--footer").offset().top }, 2000);
     });
 
     $(".js--scroll-to-organisers").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-organisers").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--section-organisers").offset().top }, 2000);
     });
 
     $(".js--scroll-to-about").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-about").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--section-about").offset().top }, 2000);
     });
 
     $(".js--scroll-to-clients").click(function () {
-        $("html, body").animate({ scrollTop: $(".js--section-clients").offset().top }, 1000);
+        $("html, body").animate({ scrollTop: $(".js--section-clients").offset().top }, 2000);
     });
 
     // Animations on scroll 
@@ -753,6 +753,17 @@ function toggleAccordion() {
 //Event Listeners
 
 questions.forEach(question => question.addEventListener('click', toggleAccordion));
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

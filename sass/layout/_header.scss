@@ -7,11 +7,11 @@
     background-position: center;
     background-attachment: fixed;
     background-attachment:scroll; 
--o-background-size:cover; 
--moz-background-size:cover; 
--webkit-background-size:cover;
--moz-background-image: url(../img/fot3a.JPG);
-background-color: var(--darken-backcolor-1);
+    -o-background-size:cover; 
+    -moz-background-size:cover; 
+    -webkit-background-size:cover;
+    -moz-background-image: url(../img/fot3a.JPG);
+    background-color: var(--darken-backcolor-1);
 // opacity: 0.70;
 
     &__text-box {
@@ -63,11 +63,11 @@ background-color: var(--darken-backcolor-1);
     background-position: center;
     background-attachment: fixed;
     background-attachment:scroll; 
--o-background-size:cover; 
--moz-background-size:cover; 
--webkit-background-size:cover;
--moz-background-image: url(../img/fot5.JPG);
-background-color: var(--darken-backcolor-1);
+    -o-background-size:cover; 
+    -moz-background-size:cover; 
+    -webkit-background-size:cover;
+    -moz-background-image: url(../img/fot5.JPG);
+    background-color: var(--darken-backcolor-1);
 // opacity: 0.70;
 
     &__text-box {
@@ -257,7 +257,7 @@ background-color: var(--darken-backcolor-1);
             @media (max-width: 700px) {
                 width: 11rem;
                 height: 10rem;
-                margin-top: 1px;
+                margin-top: -2px;
                 margin-left: 18px;
                 }
         }
